@@ -1,6 +1,6 @@
 # Emacs初学者配置文件
 
-该Emacs配置文件是基于Purcell的Emacs配置文件基础上添加个人配置文件形成的[Purcell's emacs configuration](https://github.com/purcell/emacs.d).
+该Emacs配置文件是基于Purcell的Emacs配置文件基础上添加个人配置文件形成。[Purcell's emacs configuration](https://github.com/purcell/emacs.d).
 
 ## Emacs安装及配置
 
@@ -13,7 +13,7 @@
     sudo apt install emacs26
     ```
 
-2. 方法二：如果上面方法一不能正常安装，请从源代码编译安装，请参考 http://ubuntuhandbook.org/index.php/2014/10/emacs-24-4-released-install-in-ubuntu-14-04/
+2. 方法二：如果上面方法一不能正常安装，请从源代码编译安装，请参考[Emacs编译安装](http://ubuntuhandbook.org/index.php/2014/10/emacs-24-4-released-install-in-ubuntu-14-04/)
 
 ### 快速安装Emacs初学者配置
 
