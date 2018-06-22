@@ -13,36 +13,25 @@
     sudo apt install emacs26
     ```
 
-2. 方法二：如果上面方法一不能正常安装，请从源代码编译安装，请参考[Emacs编译安装](http://ubuntuhandbook.org/index.php/2014/10/emacs-24-4-released-install-in-ubuntu-14-04/)
+2. 方法二：如果上面方法一不能正常安装，请从源代码编译安装。  
+   请参考[Emacs编译安装](http://ubuntuhandbook.org/index.php/2014/10/emacs-24-4-released-install-in-ubuntu-14-04/)
 
 ### 快速安装Emacs初学者配置
-
-1. 下载emacs-starter配置文件并安装
+* **下载emacs-starter配置文件并安装**
 
     ``` shell
     git clone https://github.com/linweiyang/emacs.starter
     cd emacs.starter
     ./install
     ```
-2. 安装google的cpplint工具
 
-    * **Ubuntu下**
+<font color=#ff0000>NOTE:</font> 到此就已经安装完Emacs的文件，运行Emacs就可以直接使用。下面是安装一些个性配置。
 
-    ``` shell
-    sudo apt-get install python-pip
-    pip install --upgrade pip
-    pip install cpplint
-    ```
+## Emacs个性化配置
 
-    * **macOS下**  
+### 在Ubuntu下改为'Caps'键改为'Ctrl'键
 
-    ``` shell
-    pip install cpplint
-    ```
-
-3. 在Ubuntu下改为'Caps'键改为'Ctrl'键
-
-    - Linux, 创建~/.Xmodmap文件:
+- **Linux, 创建~/.Xmodmap文件:**
 
     ``` xmodmap
     remove Lock = Caps_Lock
@@ -52,13 +41,25 @@
 
     在使用fcitx输入法框架（搜狗输入等）的Linux系统，在~/.xinputc中最后一行添加"xmodmap ~/.Xmodmap"。
 
-    - macOS系统按照如下修改
+* **macOS系统按照如下修改**
     
     **"System Preferences -> Keyboard -> Modifier Keys..."** to change Caps to beb Ctrl.
 
 
-<font color=#ff0000>NOTE:</font> 到此就已经安装完Emacs的文件，运行Emacs就可以直接使用。
+### 安装google的C++语法检查工具 
 
+* **Ubuntu下**
+
+    ``` shell
+    sudo apt-get install python-pip
+    sudo pip install cpplint
+    ```
+
+* **macOS下**
+
+    ``` shell
+    pip install cpplint
+    ```
 
 ## 需要注意的事项
 
@@ -66,17 +67,17 @@
 
 Emacs在markdown-mode下的预览快捷键为 C-c C-c p。
 
-在Ubuntu下安装markdown指令
+* **在Ubuntu下安装markdown指令**
 
-``` shell
+    ``` shell
     sudo apt-get install markdown
-```
+    ```
 
-在macOS下安装markdown指令
+* **在macOS下安装markdown指令**
 
-``` shell
+    ``` shell
     brew install markdown
-```
+    ```
 
 ### avy Mode
 If your Ubuntu has installed fcitx, "Ctrl+;" shortcut will be set to "Trigger Key for Clipboard History List" by default, please disable it by following steps.
