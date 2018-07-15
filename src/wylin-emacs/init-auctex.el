@@ -6,6 +6,7 @@
 (defun wylin:pdf-tools ()
   ;; pdf-tools
   (pdf-tools-install)
+  (add-hook 'pdf-view-mode-hook 'pdf-view-midnight-minor-mode)
   (setq TeX-view-program-selection '((output-pdf "pdf-tools")))
   (setq TeX-view-program-list '(("pdf-tools" "TeX-pdf-tools-sync-view")))
   )
