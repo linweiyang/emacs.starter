@@ -15,6 +15,9 @@ cp -r src/wylin-emacs ~/.emacs.d/lisp/
 
 # 修改为国内的镜像，提升数据
 ./mirror.sh
+./solarized.sh
+
+# 下载emacs库
 cd ~/.emacs.d/
 ./test-startup.sh
 
