@@ -1,4 +1,5 @@
 (require-package 'auctex)
+(require-package 'pdf-tools)
 
 (defun wylin:auctex-init ()
   (setq TeX-view-program-selection '((output-pdf "PDF Viewer")))
@@ -14,7 +15,7 @@
   ;; (setq TeX-command-default "XeLaTeX")
 
   (cond
-   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
    ;; Latex for Emacs in Windows
    ;;
    ;; Dependencies: SumatraPDF.exe, ctex, auctex
@@ -25,7 +26,7 @@
    ;; 3.) Command should automatically set to:
    ;;    "d:\emacs-24.5\bin\emacsclient.exe" --no-wait +%l "%f"
    ;; 4.) inverse search: mouse double left clicks
-   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
    ((eq system-type 'windows-nt)
     (if (executable-find "SumatraPDF.exe")
         (setq TeX-view-program-list
@@ -34,7 +35,7 @@
       (message "SumatraPDF.exe is not found."))
     )
 
-   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
    ;; Latex for Emacs in Mac OSX
    ;;
    ;; Dependencies: Skim, MacTeX, auctex
@@ -50,7 +51,7 @@
    ;;   b) Command:  /Applications/Emacs.app/Contents/MacOS/bin/emacsclient
    ;;   c) Argments: --no-wait +%line "%file"
    ;; 4.) Inverse search: command + shift + mouse left click
-   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
    ((eq system-type 'darwin)
     (if (executable-find "/Applications/Skim.app/Contents/SharedSupport/displayline")
         ;;"/Applications/Skim.app/Contents/SharedSupport/displayline -b -g %n %o %b"
@@ -59,7 +60,7 @@
       (message "Skim is not found."))
     )
 
-   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
    ;; Latex for Emacs in Ubuntu
    ;;
    ;; Dependencies: okular, texlive-full, auctex
@@ -71,12 +72,14 @@
    ;; 4.) Command should automatically set to:
    ;;     emacsclient -a emacs --no-wait +%l %f
    ;; 5.) inverse search : shift + mouse left click
-   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
    (t ;; for Linux OS
     (if (executable-find "okular")
         (setq TeX-view-program-list
               '(("PDF Viewer" "okular --unique %o#src:%n%b")))
-      (message "okular is not found."))
+      ((pdf-tools-install);
+       (setq TeX-view-program-selection '((output-pdf "pdf-tools")))
+       (setq TeX-view-program-list '(("pdf-tools" "TeX-pdf-tools-sync-view")))))
     )
    )
   )
