@@ -63,6 +63,23 @@
 
 ## 需要注意的事项
 
+### Linux下安装搜狗输入法(fcitx)后，Emacs的 "Ctrl+Space" 快捷键不能切换输入法解决方法
+
+    在/etc/environment文件最后,添加如下
+    LC_CTYPE="zh_CN.utf8"
+    
+    并执行如下指令
+    ``` shell
+    locale-gen
+    ```
+    重启系统后即可用ctrl+space切换输入法了。
+
+### Linux安装搜狗输入法(fcitx)后，和Emacs的"Ctrl+;"快捷键冲突的修改方法
+    If your Ubuntu has installed fcitx, "Ctrl+;" shortcut will be set to "Trigger Key for Clipboard History List" by default, please disable it by following steps.
+
+    1. $ fcitx-config-gtk3  
+    2. In "Addon" -> "Clipboard" -> "Trigger Key for Clipboard History List", remove the shortcut.  
+
 ### 使用Markdown的用户，请安装markdown工具。
 
 Emacs在markdown-mode下的预览快捷键为 C-c C-c p。
@@ -79,10 +96,5 @@ Emacs在markdown-mode下的预览快捷键为 C-c C-c p。
     brew install markdown
     ```
 
-### avy Mode
-If your Ubuntu has installed fcitx, "Ctrl+;" shortcut will be set to "Trigger Key for Clipboard History List" by default, please disable it by following steps.
-
-1. $ fcitx-config-gtk3  
-2. In "Addon" -> "Clipboard" -> "Trigger Key for Clipboard History List", remove the shortcut.  
 
 
