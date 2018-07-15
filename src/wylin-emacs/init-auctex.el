@@ -1,6 +1,15 @@
 (require-package 'auctex)
 (require-package 'pdf-tools)
 
+(setq TeX-pdf-tools nil)
+
+(defun wylin:pdf-tools ()
+  ;; pdf-tools
+  (pdf-tools-install)
+  (setq TeX-view-program-selection '((output-pdf "pdf-tools")))
+  (setq TeX-view-program-list '(("pdf-tools" "TeX-pdf-tools-sync-view")))
+  )
+
 (defun wylin:auctex-init ()
   (setq TeX-view-program-selection '((output-pdf "PDF Viewer")))
   ;; Enable synctex correlation
@@ -15,6 +24,10 @@
   ;; (setq TeX-command-default "XeLaTeX")
 
   (cond
+   ;; using the pdf-tools for emacs
+   ((eq TeX-pdf-tools t)
+    (wylin:pdf-tools)
+    )
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
    ;; Latex for Emacs in Windows
    ;;
@@ -32,7 +45,8 @@
         (setq TeX-view-program-list
               '(("PDF Viewer" ("\"SumatraPDF.exe\" -reuse-instance"
                                (mode-io-correlate " -forward-search %b %n ") " %o"))))
-      (message "SumatraPDF.exe is not found."))
+      ((message "SumatraPDF.exe is not found.")
+       (wylin:pdf-tools)))
     )
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -57,7 +71,8 @@
         ;;"/Applications/Skim.app/Contents/SharedSupport/displayline -b -g %n %o %b"
         (setq TeX-view-program-list
               '(("PDF Viewer" "/Applications/Skim.app/Contents/SharedSupport/displayline -b %n %o %b")))
-      (message "Skim is not found."))
+      ((message "Skim is not found.")
+       (wylin:pdf-tools)))
     )
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -77,9 +92,8 @@
     (if (executable-find "okular")
         (setq TeX-view-program-list
               '(("PDF Viewer" "okular --unique %o#src:%n%b")))
-      ((pdf-tools-install);
-       (setq TeX-view-program-selection '((output-pdf "pdf-tools")))
-       (setq TeX-view-program-list '(("pdf-tools" "TeX-pdf-tools-sync-view")))))
+      ((message "okular is not found")
+       (wylin:pdf-tools)))
     )
    )
   )
