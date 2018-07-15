@@ -1,7 +1,16 @@
 (require-package 'auctex)
 (require-package 'pdf-tools)
 
-(setq TeX-pdf-tools nil)
+(defvar TeX-pdf-tools nil)
+
+(defun switch-pdf-tools ()
+  (interactive)
+  (if (eq TeX-pdf-tools nil)
+      (setq TeX-pdf-tools t)
+    (setq TeX-pdf-tools nil))
+
+  (wylin:auctex-init)
+  )
 
 (defun wylin:pdf-tools ()
   ;; pdf-tools
