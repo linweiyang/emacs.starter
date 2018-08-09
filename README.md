@@ -8,9 +8,9 @@
 1. 方法一：在Ubuntu LTS 14.04或以上，安装指令如下
 
     ``` shell
-    sudo add-apt-repository ppa:kelleyk/emacs
-    sudo apt update
-    sudo apt install emacs26
+        sudo add-apt-repository ppa:kelleyk/emacs
+        sudo apt update
+        sudo apt install emacs26
     ```
 
 2. 方法二：如果上面方法一不能正常安装，请从源代码编译安装。  
@@ -20,9 +20,9 @@
 * **下载emacs-starter配置文件并安装**
 
     ``` shell
-    git clone https://github.com/linweiyang/emacs.starter
-    cd emacs.starter
-    ./install
+        git clone https://github.com/linweiyang/emacs.starter
+        cd emacs.starter
+        ./install
     ```
 
 <font color=#ff0000>NOTE:</font> 到此就已经安装完Emacs的文件，运行Emacs就可以直接使用。下面是安装一些个性配置。
@@ -34,12 +34,15 @@
 - **Linux, 创建~/.Xmodmap文件:**
 
     ``` xmodmap
-    remove Lock = Caps_Lock
-    keysym Caps_Lock = Control_L
-    add control = Control_L
+        remove Lock = Caps_Lock
+        keysym Caps_Lock = Control_L
+        add control = Control_L
     ```
 
-    在使用fcitx输入法框架（搜狗输入等）的Linux系统，在~/.xinputc中最后一行添加"xmodmap ~/.Xmodmap"。
+    在使用fcitx输入法框架（搜狗输入等）的Linux系统，在~/.xinputc中最后一行添加"xmodmap ~/.Xmodmap":
+    ``` shell
+        echo xmodmap ~/.Xmodmap >> ~/.xinputrc
+    ```
 
 * **macOS系统按照如下修改**
     
@@ -51,14 +54,14 @@
 * **Ubuntu下**
 
     ``` shell
-    sudo apt-get install python-pip
-    sudo pip install cpplint
+        sudo apt-get install python-pip
+        sudo pip install cpplint
     ```
 
 * **macOS下**
 
     ``` shell
-    pip install cpplint
+        pip install cpplint
     ```
 
 ## 需要注意的事项
@@ -91,13 +94,13 @@ Emacs在markdown-mode下的预览快捷键为 C-c C-c p。
 * **在Ubuntu下安装markdown指令**
 
     ``` shell
-    sudo apt-get install markdown
+        sudo apt-get install markdown
     ```
 
 * **在macOS下安装markdown指令**
 
     ``` shell
-    brew install markdown
+        brew install markdown
     ```
 
 
