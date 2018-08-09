@@ -69,8 +69,9 @@
     LC_CTYPE="zh_CN.utf8"
     
     并执行如下指令
+    
     ``` shell
-    locale-gen
+    sudo locale-gen
     ```
     重启系统后即可用ctrl+space切换输入法了。
 
