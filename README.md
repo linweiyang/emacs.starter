@@ -65,13 +65,16 @@
 
 ### Linux下安装搜狗输入法(fcitx)后，Emacs的 "Ctrl+Space" 快捷键不能切换输入法解决方法
 
+* **Ubuntu下**
     在/etc/environment文件最后,添加如下
-    LC_CTYPE="zh_CN.utf8"
-    
-    并执行如下指令
-    
     ``` shell
-    sudo locale-gen
+        sudo echo LC_CTYPE="zh_CN.utf8" >> /etc/environment
+    ```
+
+    并执行如下指令
+
+    ``` shell
+        sudo locale-gen
     ```
     重启系统后即可用ctrl+space切换输入法了。
 
