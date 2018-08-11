@@ -96,7 +96,17 @@
         make
         sudo make install
     ```
-
+* **使用方法**
+    在进行cmake时，用如下指令:
+    ``` shell
+        cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=1 ..
+    ```
+    或者在~/.bashrc或~/.zshrc的最后一行，添加cmake-rtags变量如下：
+    ``` shell
+        alias cmake-rtags='cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=1'
+        source ~/.bashrc (用zsh的，请用~/.zshrc)
+    ```
+    这样就可以用"cmake-rtags .."命令代替"cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=1 .."。
 
 ## 需要注意的事项
 
