@@ -29,7 +29,7 @@
 
 ## Emacs个性化配置
 
-### 在Ubuntu下改为'Caps'键改为'Ctrl'键
+### 一、在Ubuntu下改为'Caps'键改为'Ctrl'键
 
 - **Linux, 创建~/.Xmodmap文件:**
 
@@ -49,7 +49,7 @@
     **"System Preferences -> Keyboard -> Modifier Keys..."** to change Caps to beb Ctrl.
 
 
-### 安装google的C++语法检查工具 
+### 二、安装google的C++语法检查工具 
 
 * **Ubuntu下**
 
@@ -64,7 +64,7 @@
         pip install cpplint
     ```
 
-### 在Linux/macOS下，开发C/C++时用的rtags工具，该工具可以快速查找变量定义。（安装出问题的找我！）
+### 三、在Linux/macOS下，开发C/C++时用的rtags工具，该工具可以快速查找变量定义。（安装出问题的找我！）
 
     安装该工具要求：
     - LLVM/Clang >= 3.3
