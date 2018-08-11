@@ -64,6 +64,40 @@
         pip install cpplint
     ```
 
+### 在Linux/macOS下，开发C/C++时用的rtags工具，该工具可以快速查找变量定义。（安装出问题的找我！）
+
+    安装该工具要求：
+    - LLVM/Clang >= 3.3
+    - GCC/Clang >= 4.7/3.2
+    - cmake >= 2.8
+    - emacs >= 24.4
+
+* **Ubuntu下**
+
+    ``` shell
+        sudo apt-get install llvm clang libclang-dev openssl
+        git clone --recursive https://github.com/Andersbakken/rtags.git
+        cd rtags
+        mkdir build
+        cd build
+        cmake ..
+        make
+        sudo make install
+    ```
+* **macOS下**
+
+    ``` shell
+        brew install llvm --with-libcxx --with-clang --without-assertions --with-rtti
+        git clone --recursive https://github.com/Andersbakken/rtags.git
+        cd rtags
+        mkdir build
+        cd build
+        cmake ..
+        make
+        sudo make install
+    ```
+
+
 ## 需要注意的事项
 
 ### Linux下安装搜狗输入法(fcitx)后，Emacs的 "Ctrl+Space" 快捷键不能切换输入法解决方法
