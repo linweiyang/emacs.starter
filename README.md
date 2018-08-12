@@ -39,14 +39,14 @@
         add control = Control_L
     ```
 
-    在使用fcitx输入法框架（搜狗输入等）的Linux系统，在~/.xinputc中最后一行添加"xmodmap ~/.Xmodmap":
+    在使用fcitx输入法框架（搜狗输入等）的Linux系统，在~/.xinputc中最后一行添加"xmodmap ~/.Xmodmap"，或用如下指令快速添加：
     ``` shell
         echo xmodmap ~/.Xmodmap >> ~/.xinputrc
     ```
 
 * **macOS系统按照如下修改**
     
-    **"System Preferences -> Keyboard -> Modifier Keys..."** to change Caps to beb Ctrl.
+    **"System Preferences -> Keyboard -> Modifier Keys..."** 将Caps改为Ctrl。
 
 
 ### 二、安装google的C++语法检查工具 
