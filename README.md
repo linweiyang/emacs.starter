@@ -101,6 +101,17 @@
         make
         sudo make install
     ```
+    如果由于Rtags更新比较快，而Emacs的Package更新比较慢，如果Emacs打开C/CPP文件，发现有如下错误时：
+    ``` shell
+        Debugger entered--Lisp error: (error "RTags: protocol version mismatch. This is usually caused by getting rtags.el from melpa and installing a new rtags build that modified the protocol. They need to be in sync.")
+    ``` 
+    说明rtags的程序版本和Emacs的库版本不对。
+    请修改~/.emacs.d/epla-xxx（xxx为对应的Emacs版本号）下的rtags-yyy（yyy为rtags的时间版本）下的rtags.el文件
+    ``` shell
+        将74行的(defconst rtags-protocol-version 125)中的“125”改为"127"。
+   ```
+   rtags最新版本号，可以从rtags的CPP源代码查找出来。找不到版本号的，问我！
+
 * **使用方法**
 
     在进行cmake时，用如下指令:
