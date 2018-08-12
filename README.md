@@ -117,6 +117,15 @@
     ```
     这样就可以用"cmake-rtags .."命令代替"cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=1 .."。
 
+    对于C/C++文件，Ctrl+c r 等待三秒，右侧将出现所有的快捷键：
+    ``` shell
+        1. Ctrl+c r ,   当前变量参考
+        2. Ctrl+c r .   当前变量定义
+        3. Ctrl+c r /   当前变量所有参考
+        ...
+    ```
+    
+
 ## 需要注意的事项
 
 ### Linux下安装搜狗输入法(fcitx)后，Emacs的 "Ctrl+Space" 快捷键不能切换输入法解决方法
