@@ -28,5 +28,6 @@
 (require 'init-wylin-swiper)
 (require 'init-wylin-reveal)
 (require 'init-wylin-key)
+(require 'init-zeal)
 
 (provide 'init-local)

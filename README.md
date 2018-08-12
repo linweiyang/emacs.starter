@@ -64,7 +64,12 @@
         pip install cpplint
     ```
 
-### 三、在Linux/macOS下，开发C/C++时用的rtags工具，该工具可以快速查找变量定义。（安装出问题的找我！）
+### 三、Linux/Windows下安装Zeal工具（macOS下Dash在Linux的版本）
+
+    安装Zeal工具并下载语言函数手册库：sudo apt-get install zeal
+    使用方法：快捷键是 Ctrl+c D。
+
+### 四、在Linux/macOS下，开发C/C++时用的rtags工具，该工具可以快速查找变量定义。（安装出问题的找我！）
 
     安装该工具要求：
     - LLVM/Clang >= 3.3
