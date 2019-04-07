@@ -4,8 +4,7 @@
 
 (when (maybe-require-package 'swiper)
   (after-load 'ivy
-    (define-key ivy-mode-map (kbd "C-s") 'swiper)
-    (define-key ivy-mode-map (kbd "C-r") 'swiper)))
+    (define-key ivy-mode-map (kbd "C-s") 'swiper)))
 
 ;; (ivy-mode 1)
 ;; (setq ivy-use-virtual-buffers t)
