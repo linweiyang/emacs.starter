@@ -8,9 +8,9 @@
 1. 方法一：在Ubuntu LTS 14.04或以上，安装指令如下
 
     ``` shell
-        sudo add-apt-repository ppa:kelleyk/emacs
-        sudo apt update
-        sudo apt install emacs26
+    sudo add-apt-repository ppa:kelleyk/emacs
+    sudo apt update
+    sudo apt install emacs26
     ```
 
 2. 方法二：如果上面方法一不能正常安装，请从源代码编译安装。  
@@ -20,9 +20,9 @@
 * **下载emacs-starter配置文件并安装**
 
     ``` shell
-        git clone https://github.com/linweiyang/emacs.starter
-        cd emacs.starter
-        ./install
+    git clone https://github.com/linweiyang/emacs.starter
+    cd emacs.starter
+    ./install
     ```
 
 <font color=#ff0000>NOTE:</font> 到此就已经安装完Emacs的文件，运行Emacs就可以直接使用。下面是安装一些个性配置。
