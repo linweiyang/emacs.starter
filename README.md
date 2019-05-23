@@ -34,14 +34,14 @@
 - **Linux, 创建~/.Xmodmap文件:**
 
     ``` xmodmap
-        remove Lock = Caps_Lock
-        keysym Caps_Lock = Control_L
-        add control = Control_L
+    remove Lock = Caps_Lock
+    keysym Caps_Lock = Control_L
+    add control = Control_L
     ```
 
     在使用fcitx输入法框架（搜狗输入等）的Linux系统，在~/.xinputc中最后一行添加"xmodmap ~/.Xmodmap"，或用如下指令快速添加：
     ``` shell
-        echo xmodmap ~/.Xmodmap >> ~/.xinputrc
+    echo xmodmap ~/.Xmodmap >> ~/.xinputrc
     ```
 
 * **macOS系统按照如下修改**
@@ -54,14 +54,14 @@
 * **Ubuntu下**
 
     ``` shell
-        sudo apt-get install python-pip
-        sudo pip install cpplint
+    sudo apt-get install python-pip
+    sudo pip install cpplint
     ```
 
 * **macOS下**
 
     ``` shell
-        pip install cpplint
+    pip install cpplint
     ```
 
 ### 三、Linux/Windows下安装Zeal工具（macOS下Dash在Linux的版本）
@@ -80,60 +80,60 @@
 * **Ubuntu下**
 
     ``` shell
-        sudo apt-get install llvm clang libclang-dev openssl
-        git clone --recursive https://github.com/Andersbakken/rtags.git
-        cd rtags
-        mkdir build
-        cd build
-        cmake ..
-        make
-        sudo make install
+    sudo apt-get install llvm clang libclang-dev openssl
+    git clone --recursive https://github.com/Andersbakken/rtags.git
+    cd rtags
+    mkdir build
+    cd build
+    cmake ..
+    make
+    sudo make install
     ```
 * **macOS下**
 
     ``` shell
-        brew install llvm --with-libcxx --with-clang --without-assertions --with-rtti
-        git clone --recursive https://github.com/Andersbakken/rtags.git
-        cd rtags
-        mkdir build
-        cd build
-        cmake ..
-        make
-        sudo make install
+    brew install llvm --with-libcxx --with-clang --without-assertions --with-rtti
+    git clone --recursive https://github.com/Andersbakken/rtags.git
+    cd rtags
+    mkdir build
+    cd build
+    cmake ..
+    make
+    sudo make install
     ```
     如果由于Rtags更新比较快，而Emacs的Package更新比较慢，如果Emacs打开C/CPP文件，发现有如下错误时：
     ``` shell
-        Debugger entered--Lisp error: (error "RTags: protocol version mismatch. This is usually caused by getting rtags.el from melpa and installing a new rtags build that modified the protocol. They need to be in sync.")
+    Debugger entered--Lisp error: (error "RTags: protocol version mismatch. This is usually caused by getting rtags.el from melpa and installing a new rtags build that modified the protocol. They need to be in sync.")
     ``` 
     说明rtags的程序版本和Emacs的库版本不对。
     请修改~/.emacs.d/epla-xxx（xxx为对应的Emacs版本号）下的rtags-yyy（yyy为rtags的时间版本）下的rtags.el文件
     ``` shell
-        将74行的(defconst rtags-protocol-version 125)中的“125”改为"127"。
-   ```
+    将74行的(defconst rtags-protocol-version 125)中的“125”改为"127"。
+    ```
    rtags最新版本号，可以从rtags的CPP源代码查找出来。找不到版本号的，问我！
 
 * **使用方法**
 
     在进行cmake时，用如下指令:
     ``` shell
-        cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=1 ..
+    cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=1 ..
     ```
     为了方便，可以在~/.bashrc或~/.zshrc的最后一行，添加cmake-rtags变量如下：
     ``` shell
-        alias cmake-rtags='cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=1'
+    alias cmake-rtags='cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=1'
     ```
     添加完后，执行： 
     ``` shell
-        source ~/.bashrc (用zsh的，请用~/.zshrc)
+    source ~/.bashrc (用zsh的，请用~/.zshrc)
     ```
     这样就可以用"cmake-rtags .."命令代替"cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=1 .."。
 
     对于C/C++文件，Ctrl+c r 等待三秒，右侧将出现所有的快捷键：
     ``` shell
-        1. Ctrl+c r ,   当前变量参考
-        2. Ctrl+c r .   当前变量定义
-        3. Ctrl+c r /   当前变量所有参考
-        ...
+    Ctrl+c r ,   当前变量参考
+    Ctrl+c r .   当前变量定义
+    Ctrl+c r /   当前变量所有参考
+    ...
     ```
     
 
@@ -144,13 +144,13 @@
 * **Ubuntu下**
     在/etc/environment文件最后,添加如下
     ``` shell
-        sudo echo LC_CTYPE="zh_CN.utf8" >> /etc/environment
+    sudo echo LC_CTYPE="zh_CN.utf8" >> /etc/environment
     ```
 
     并执行如下指令
 
     ``` shell
-        sudo locale-gen
+    sudo locale-gen
     ```
     重启系统后即可用ctrl+space切换输入法了。
 
@@ -167,13 +167,13 @@ Emacs在markdown-mode下的预览快捷键为 C-c C-c p。
 * **在Ubuntu下安装markdown指令**
 
     ``` shell
-        sudo apt-get install markdown
+    sudo apt-get install markdown
     ```
 
 * **在macOS下安装markdown指令**
 
     ``` shell
-        brew install markdown
+    brew install markdown
     ```
 
 
