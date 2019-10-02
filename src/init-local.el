@@ -2,7 +2,7 @@
 ;; setting font for mac system
 ;; -----------------------------------------------------------------------------
 ;; Setting English Font
-;; using M-x customize-face [RTN] to setting the face
+;; using M-x customize-face [RTN] to setting the face : default
 
 ;; ignore terminal bell
 (setq ring-bell-function 'ignore)
@@ -29,5 +29,6 @@
 ;;(require 'init-wylin-reveal)
 (require 'init-wylin-key)
 (require 'init-zeal)
+(require 'init-personal)
 
 (provide 'init-local)

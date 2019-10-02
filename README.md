@@ -71,16 +71,12 @@
 
 ### 四、在Linux/macOS下，开发C/C++时用的rtags工具，该工具可以快速查找变量定义。（安装出问题的找我！）
 
-    安装该工具要求：
-    - LLVM/Clang >= 3.3
-    - GCC/Clang >= 4.7/3.2
-    - cmake >= 2.8
-    - emacs >= 24.4
+    该工具对Clang和LLVM版本有要求，请大家安装最新版本。
 
 * **Ubuntu下**
 
     ``` shell
-    sudo apt-get install llvm clang libclang-dev openssl
+    sudo apt-get install llvm-6.0-dev clang-6.0 libclang-6.0-dev openssl
     git clone --recursive https://github.com/Andersbakken/rtags.git
     cd rtags
     mkdir build
