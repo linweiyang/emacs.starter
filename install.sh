@@ -15,7 +15,13 @@ cp -r src/wylin-emacs ~/.emacs.d/lisp/
 
 # 修改为国内的镜像，提升数据
 ./mirror.sh
-#./solarized.sh
+
+read -r -p "是否使用Solarized Dark背景? [Y/n] " input
+case $input in
+    ([yY][eE][sS]|[yY])
+        ./solarized.sh
+	;;
+esac
 
 # 下载emacs库
 cd ~/.emacs.d/
