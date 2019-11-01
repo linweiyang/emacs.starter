@@ -13,6 +13,9 @@ git clone https://github.com/purcell/emacs.d ~/.emacs.d
 cp src/init-local.el ~/.emacs.d/lisp/
 cp -r src/wylin-emacs ~/.emacs.d/lisp/
 
+# emacs 26.2及之前版本的gpg过期
+
+
 # 修改为国内的镜像，提升数据
 ./mirror.sh
 
