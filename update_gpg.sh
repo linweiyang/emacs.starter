@@ -8,11 +8,14 @@ GPG_VERSION=26.3
 
 if [ $(echo "$VERSION < $GPG_VERSION" | bc) -eq 1 ]; then
     if [ [$os =~ $macOS]]; then
-    	# macOS
-	# find /System/Applications/Emacs.app/Contents/Resources/etc -name package-keyring.gpg | xargs sudo cp etc/gnu-elpa.gpg-keyring
-    else	
+    	echo $macOS
+	find /System/Applications/Emacs.app/Contents/Resources/etc -name package-keyring.gpg | xargs sudo cp etc/gnu-elpa.gpg-keyring
+        echo "update the new GPG file"
+
+    else
 	# Linux
-	echo "update the new GPG file"
-	find /usr/share/emacs/ -name package-keyring.gpg | xargs sudo cp etc/gnu-elpa.gpg-keyring
+	echo $os
+        find /usr/share/emacs/ -name package-keyring.gpg | xargs sudo cp etc/gnu-elpa.gpg-keyring
+        echo "update the new GPG file"
     fi
 fi
