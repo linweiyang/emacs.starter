@@ -20,5 +20,6 @@ else
     # Linux
     echo $os
     find /usr/share/emacs/ -name package-keyring.gpg | xargs sudo cp etc/gnu-elpa.gpg-keyring
+    find /usr/local/share/emacs/ -name package-keyring.gpg | xargs sudo cp etc/gnu-elpa.gpg-keyring
     echo "update the new GPG file"
 fi
