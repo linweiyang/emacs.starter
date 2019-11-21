@@ -1,4 +1,10 @@
 #!/bin/bash
+os=`uname -a`
+macOS="Darwin"
+
+VERSION=`(emacs --version | awk -F ' ' 'NR==1 {print $3}' | cut -b 1-4)`
+echo $VERSION
+
 
 # 删除文件
 if [ ! -d "~/.emacs.d" ];then
@@ -9,9 +15,23 @@ fi
 # 下载purcell的emacs配置文件
 git clone https://github.com/purcell/emacs.d ~/.emacs.d
 
+
 # 安装emacs的配置文件
 cp src/init-local.el ~/.emacs.d/lisp/
 cp -r src/wylin-emacs ~/.emacs.d/lisp/
+
+
+# 低版本下，去掉不能用的库
+if [ $(echo "$VERSION < 25.1" | bc) -eq 0 ]; then
+    if [[ $os =~ $macOS ]]; then
+        sed -i "" '/haskell/s/^/#/' ~/.emacs.d/init.el
+        sed -i "" '/plantuml/s/^/#/' ~/.emacs.d/lisp/init-local.el 
+    else
+        sed -i '/haskell/s/^/#/' ~/.emacs.d/init.el
+        sed -i '/plantuml/s/^/#/' ~/.emacs.d/lisp/init-local.el 
+
+    fi
+fi
 
 # emacs 26.2及之前版本的gpg过期
 ./update_gpg.sh
