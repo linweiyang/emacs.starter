@@ -22,7 +22,7 @@ cp -r src/wylin-emacs ~/.emacs.d/lisp/
 
 
 # 低版本下，去掉不能用的库
-if [ $(echo "$VERSION < 25.1" | bc) -eq 0 ]; then
+if [ $(echo "$VERSION < 25.1" | bc) -eq 1 ]; then
     if [[ $os =~ $macOS ]]; then
         sed -i "" '/haskell/s/^/;;/' ~/.emacs.d/init.el
         sed -i "" '/plantuml/s/^/;;/' ~/.emacs.d/lisp/init-local.el 
