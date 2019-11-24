@@ -21,15 +21,26 @@ cp src/init-local.el ~/.emacs.d/lisp/
 cp -r src/wylin-emacs ~/.emacs.d/lisp/
 
 
+function comment_macos() {
+    sed -i "" "/$1/s/^/;;/" $2
+}
+
+function comment_linux() {
+    sed -i "/$1/s/^/;;/" $2
+}
+
 # 低版本下，去掉不能用的库
 if [ $(echo "$VERSION < 25.1" | bc) -eq 1 ]; then
     if [[ $os =~ $macOS ]]; then
-        sed -i "" '/haskell/s/^/;;/' ~/.emacs.d/init.el
-        sed -i "" '/plantuml/s/^/;;/' ~/.emacs.d/lisp/init-local.el 
+        comment_macos "haskell" ~/.emacs.d/init.el
+        comment_macos "plantuml" ~/.emacs.d/lisp/init-local.el
+        comment_macos "cuda" ~/.emacs.d/lisp/init-local.el
+#        sed -i "" '/cuda/s/^/;;/' ~/.emacs.d/lisp/init-local.el
     else
-        sed -i '/haskell/s/^/;;/' ~/.emacs.d/init.el
-        sed -i '/plantuml/s/^/;;/' ~/.emacs.d/lisp/init-local.el 
-
+       comment_linux "haskell" ~/.emacs.d/init.el
+       comment_linux "plantuml" ~/.emacs.d/lisp/init-local.el
+       comment_linux "cuda" ~/.emacs.d/lisp/init-local.el
+#       sed -i '/cuda/s/^/;;/' ~/.emacs.d/lisp/init-local.el
     fi
 fi
 
