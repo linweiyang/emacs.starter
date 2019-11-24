@@ -30,5 +30,6 @@
 (require 'init-wylin-key)
 (require 'init-zeal)
 (require 'init-personal)
+(require 'init-fcitx)
 
 (provide 'init-local)
