@@ -1,4 +1,4 @@
-(require-package 'fcitx)
+(grequire-package 'fcitx)
 (require 'fcitx)
 
 (cond
