@@ -14,9 +14,8 @@
 
  ;; Linux
  ((eq system-type 'gnu/linux)
-  (when (executable-find "fcitx-remote")
-    (fcitx-aggressive-setup)
-    (setq fcitx-use-dbus t)))
+  (fcitx-aggressive-setup)
+  (setq fcitx-use-dbus t))
  )
 
 (provide 'init-fcitx)
