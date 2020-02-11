@@ -13,7 +13,7 @@ if [ ! -d "~/.emacs.d" ];then
 fi
 
 # 下载purcell的emacs配置文件
-git clone https://github.com/purcell/emacs.d ~/.emacs.d
+git clone --depth=1 https://github.com/purcell/emacs.d ~/.emacs.d
 
 
 # 安装emacs的配置文件
