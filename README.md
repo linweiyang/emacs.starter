@@ -41,10 +41,11 @@
 
     [方法一（推荐）]
     ``` shell
+    sudo cp ~/.Xmodmap /etc/X11/xinit
     sudo vim /etc/X11/xinit/xinitrc
     ```
     复制下面内容到 xinitrc 中
-    ```
+    ``` conf
     usermodmap=$HOME/.Xmodmap
     sysmodmap=/etc/X11/xinit/.Xmodmap
 
@@ -57,7 +58,7 @@
     fi 
     ```
     
-    [方法二（推荐）]
+    [方法二]
     在使用fcitx输入法框架（搜狗输入等）的Linux系统，在~/.xinputc中最后一行添加"xmodmap ~/.Xmodmap"，或用如下指令快速添加：
     ``` shell
     echo xmodmap ~/.Xmodmap >> ~/.xinputrc
